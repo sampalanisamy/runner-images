@@ -101,6 +101,15 @@ Describe "Ansible" {
     }
 }
 
+Describe "Bazel" {
+    It "<ToolName>" -TestCases @(
+        @{ ToolName = "bazel" }
+        @{ ToolName = "bazelisk" }
+    ) {
+        "$ToolName --version"| Should -ReturnZeroExitCode
+    }
+}
+
 Describe "clang" {
     [array]$testCases = (Get-ToolsetContent).clang.Versions | ForEach-Object { @{ClangVersion = $_} }
 
