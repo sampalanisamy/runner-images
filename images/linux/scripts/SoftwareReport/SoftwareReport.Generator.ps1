@@ -88,57 +88,6 @@ if ((Test-IsUbuntu18) -or (Test-IsUbuntu20)) {
 if ((Test-IsUbuntu20) -or (Test-IsUbuntu22)) {
     $projectManagement.AddToolVersion("Lerna", $(Get-LernaVersion))
 }
-<<<<<<< HEAD
-=======
-$markdown += New-MDList -Style Unordered -Lines ($projectManagementList | Sort-Object)
-
-$markdown += New-MDHeader "Tools" -Level 3
-$toolsList = @(
-    (Get-AnsibleVersion),
-    (Get-AptFastVersion),
-    (Get-AzCopyVersion),
-    (Get-BicepVersion),
-    (Get-CodeQLBundleVersion),
-    (Get-CMakeVersion),
-    (Get-DockerMobyClientVersion),
-    (Get-DockerMobyServerVersion),
-    (Get-DockerComposeV1Version),
-    (Get-DockerComposeV2Version),
-    (Get-DockerBuildxVersion),
-    (Get-DockerAmazonECRCredHelperVersion),
-    (Get-BuildahVersion),
-    (Get-PodManVersion),
-    (Get-SkopeoVersion),
-    (Get-GitVersion),
-    (Get-GitLFSVersion),
-    (Get-GitFTPVersion),
-    (Get-HavegedVersion),
-    (Get-HerokuVersion),
-    (Get-LeiningenVersion),
-    (Get-SVNVersion),
-    (Get-JqVersion),
-    (Get-YqVersion),
-    (Get-KindVersion),
-    (Get-KubectlVersion),
-    (Get-KustomizeVersion),
-    (Get-MediainfoVersion),
-    (Get-HGVersion),
-    (Get-MinikubeVersion),
-    (Get-NewmanVersion),
-    (Get-NVersion),
-    (Get-NvmVersion),
-    (Get-OpensslVersion),
-    (Get-PackerVersion),
-    (Get-ParcelVersion),
-    (Get-PulumiVersion),
-    (Get-RVersion),
-    (Get-SphinxVersion),
-    (Get-TerraformVersion),
-    (Get-YamllintVersion),
-    (Get-ZstdVersion)
-)
-
->>>>>>> 2db5310de (Removed tests and references in)
 if ((Test-IsUbuntu18) -or (Test-IsUbuntu20)) {
     $projectManagement.AddToolVersion("Maven", $(Get-MavenVersion))
     $projectManagement.AddToolVersion("Sbt", $(Get-SbtVersion))
@@ -149,8 +98,6 @@ $tools = $installedSoftware.AddHeader("Tools")
 $tools.AddToolVersion("Ansible", $(Get-AnsibleVersion))
 $tools.AddToolVersion("apt-fast", $(Get-AptFastVersion))
 $tools.AddToolVersion("AzCopy", $(Get-AzCopyVersion))
-$tools.AddToolVersion("Bazel", $(Get-BazelVersion))
-$tools.AddToolVersion("Bazelisk", $(Get-BazeliskVersion))
 $tools.AddToolVersion("Bicep", $(Get-BicepVersion))
 $tools.AddToolVersion("Buildah", $(Get-BuildahVersion))
 $tools.AddToolVersion("CMake", $(Get-CMakeVersion))
@@ -228,13 +175,6 @@ $phpTools.AddToolVersion("Composer", $(Get-ComposerVersion))
 $phpTools.AddToolVersion("PHPUnit", $(Get-PHPUnitVersion))
 $phpTools.AddNote("Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.")
 
-<<<<<<< HEAD
-$haskellTools = $installedSoftware.AddHeader("Haskell Tools")
-$haskellTools.AddToolVersion("Cabal", $(Get-CabalVersion))
-$haskellTools.AddToolVersion("GHC", $(Get-GHCVersion))
-$haskellTools.AddToolVersion("GHCup", $(Get-GHCupVersion))
-$haskellTools.AddToolVersion("Stack", $(Get-StackVersion))
-
 Initialize-RustEnvironment
 $rustTools = $installedSoftware.AddHeader("Rust Tools")
 $rustTools.AddToolVersion("Cargo", $(Get-CargoVersion))
@@ -248,16 +188,6 @@ $rustToolsPackages.AddToolVersion("Cargo clippy", $(Get-CargoClippyVersion))
 $rustToolsPackages.AddToolVersion("Cargo outdated", $(Get-CargoOutdatedVersion))
 $rustToolsPackages.AddToolVersion("Cbindgen", $(Get-CbindgenVersion))
 $rustToolsPackages.AddToolVersion("Rustfmt", $(Get-RustfmtVersion))
-=======
-$markdown += New-MDHeader "Rust Tools" -Level 3
-$markdown += New-MDList -Style Unordered -Lines (@(
-    (Get-RustVersion),
-    (Get-RustupVersion),
-    (Get-RustdocVersion),
-    (Get-CargoVersion)
-    ) | Sort-Object
-)
->>>>>>> 2db5310de (Removed tests and references in)
 
 $browsersTools = $installedSoftware.AddHeader("Browsers and Drivers")
 $browsersTools.AddToolVersion("Google Chrome", $(Get-ChromeVersion))
